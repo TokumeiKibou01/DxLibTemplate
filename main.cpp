@@ -1,12 +1,17 @@
 #include <DxLib.h>
 #include <iostream>
 #include "GameScreen.h"
+#include "SceneManager.h"
 
 //プロトタイプ宣言
 int initLibrary();
 
 //名前空間の使用
 using namespace std;
+
+namespace {
+    SceneManager sceneManager;
+}
 
 //メイン関数
 int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd) {
@@ -19,6 +24,9 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
     while (true) {
         ClearDrawScreen();
+
+        sceneManager.Update();
+        sceneManager.Draw();
 
         ScreenFlip();
         WaitTimer(1000 / Screen::FPS);
