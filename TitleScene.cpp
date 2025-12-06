@@ -2,8 +2,7 @@
 #include "TitleScene.h"
 #include "DrawManager.h"
 #include "DrawCircle.h"
-
-DrawManager drawManager;
+#include "GameManager.h"
 
 TitleScene::TitleScene()
 	: SceneBase("TitleScene"), timer(0) {
@@ -22,6 +21,11 @@ void TitleScene::Draw() {
 }
 
 void TitleScene::Update() {
+	bool beforeKey = false;
+	if (CheckHitKey(KEY_INPUT_SPACE) && !beforeKey) {
+		GetSceneManager().ChangeScene("PlayScene");
+	}
+	beforeKey = CheckHitKey(KEY_INPUT_SPACE);
 	timer++;
 }
 

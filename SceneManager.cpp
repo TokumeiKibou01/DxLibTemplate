@@ -1,10 +1,12 @@
 #include "SceneManager.h"
 #include "SceneBase.h"
 #include "TitleScene.h"
+#include "PlayScene.h"
 
 SceneManager::SceneManager() {
 	//‚±‚±‚Éscene‚ð’Ç‰Á‚·‚é
 	sceneList.push_back(new TitleScene());
+	sceneList.push_back(new PlayScene());
 }
 
 SceneManager::~SceneManager() {
