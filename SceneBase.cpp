@@ -1,8 +1,10 @@
 #include "SceneBase.h"
 #include "TitleScene.h"
+#include "GameManager.h"
 
 SceneBase::SceneBase(string name_) {
     this->name = name_;
+    drawVector = &GetDrawManager().drawMap[name];
 }
 
 SceneBase::~SceneBase() {
@@ -17,5 +19,9 @@ void SceneBase::Draw() {
 }
 
 void SceneBase::Update() {
+    //‰½‚à‚µ‚È‚¢
+}
+
+void SceneBase::init() {
     //‰½‚à‚µ‚È‚¢
 }

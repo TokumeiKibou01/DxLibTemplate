@@ -1,4 +1,5 @@
 #include "SceneManager.h"
+#include "SceneBase.h"
 #include "TitleScene.h"
 
 SceneManager::SceneManager() {
@@ -12,6 +13,7 @@ SceneManager::~SceneManager() {
 SceneBase* SceneManager::GetScene() {
 	if (nowScene == nullptr) {
 		nowScene = sceneList[0];
+		nowScene->init();
 	}
 	return nowScene;
 }
@@ -21,6 +23,7 @@ void SceneManager::ChangeScene(string name_) {
 		SceneBase* scene = sceneList[n];
 		if (scene->GetName()._Equal(name_)) {
 			nowScene = scene;
+			nowScene->init();
 			break;
 		}
 	}

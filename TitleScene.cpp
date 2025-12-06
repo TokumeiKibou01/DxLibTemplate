@@ -1,8 +1,13 @@
 #include <DxLib.h>
 #include "TitleScene.h"
+#include "DrawManager.h"
+#include "DrawCircle.h"
+
+DrawManager drawManager;
 
 TitleScene::TitleScene()
 	: SceneBase("TitleScene"), timer(0) {
+
 }
 
 TitleScene::~TitleScene() {
@@ -10,8 +15,16 @@ TitleScene::~TitleScene() {
 
 void TitleScene::Draw() {
 	DrawFormatString(0, 0, GetColor(255, 255, 255), "‚±‚Ìscene‚Ítitle‚Å‚·F%d", timer);
+	
+	for (auto draw : *drawVector) {
+		draw->Draw();
+	}
 }
 
 void TitleScene::Update() {
 	timer++;
+}
+
+void TitleScene::init() {
+	drawVector->push_back(new CircleDraw(string("aa"), 3, Postion(100, 100, 0), Vector3D(0, 0, 0)));
 }

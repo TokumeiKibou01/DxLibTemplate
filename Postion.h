@@ -3,6 +3,12 @@
 struct Postion {
 	float x, y, z;
 
+	Postion(float x, float y, float z) {
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+
 	void Set(float x, float y, float z) {
 		this->x = x;
 		this->y = y;
