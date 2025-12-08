@@ -31,6 +31,6 @@ struct Postion {
 		float xDistance = (pos.x - this->x);
 		float yDistance = (pos.y - this->y);
 		float zDistance = (pos.z - this->z);
-		return sqrt(xDistance * xDistance - yDistance * yDistance - zDistance * zDistance);
+		return sqrt(xDistance * xDistance + yDistance * yDistance + zDistance * zDistance);
 	}
 };

@@ -54,6 +54,6 @@ struct Vector3D {
 		float xDistance = (vec.x - this->x);
 		float yDistance = (vec.y - this->y);
 		float zDistance = (vec.z - this->z);
-		return sqrt(xDistance * xDistance - yDistance * yDistance - zDistance * zDistance);
+		return sqrt(xDistance * xDistance + yDistance * yDistance + zDistance * zDistance);
 	}
 };
