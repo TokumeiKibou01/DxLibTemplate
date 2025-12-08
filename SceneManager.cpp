@@ -21,13 +21,19 @@ SceneBase* SceneManager::GetScene() {
 }
 
 void SceneManager::ChangeScene(string name_) {
+	bool result = false;
 	for (int n = 0; n < sceneList.size(); n++) {
 		SceneBase* scene = sceneList[n];
 		if (scene->GetName()._Equal(name_)) {
 			nowScene = scene;
 			nowScene->init();
+			result = true;
 			break;
 		}
+	}
+
+	if (!result) {
+		MessageBoxA(NULL, "w’è‚³‚ê‚½ƒV[ƒ“‚ÍŒ©‚Â‚©‚è‚Ü‚¹‚ñ‚Å‚µ‚½", NULL, MB_OK);
 	}
 }
 
