@@ -22,6 +22,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int n
 
         GetSceneManager().Update();
         GetSceneManager().Draw();
+        updateKey();
 
         ScreenFlip();
         WaitTimer(1000 / Screen::FPS);

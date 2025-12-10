@@ -17,6 +17,9 @@ namespace Color {
 	const int WHITE = GetColor(255, 255, 255);
 }
 
+void updateKey();
+bool IsGetDownKey(int key);
+
 class GameUtility {
 public:
 	static void DrawFixText(DrawType type, int x, int y, int size, unsigned int text_color, unsigned int edge_color, std::string text);
